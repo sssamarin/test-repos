@@ -1,6 +1,0 @@
-@echo off
-cls
-:a
-start mspaint.exe
-start SamarinLox.bat
-goto a
