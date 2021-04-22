@@ -22,29 +22,24 @@ def bin_convert(n):
     X = list(map(int, X))
     return X
 
-def num2dac(x):
-    i = 2    
+def num2dac(x):   
     N = [0]*8
     N = bin_convert(x)
     GPIO.output(D, N)
     time.sleep(0.01)
     if GPIO.input(4) == 0:
-        i = 1
+        return 1 
     else:
-        i = 0
+        return 0
 
+while low != up - 1:
+    mid = (low + up) // 2
+    if num2dac(a[mid]) == 1 :
+        up = mid 
+    else:
+        low = mid 
+    print(3.26 * (a[mid]/255))
 
-
-print('Кол-во повторений')
-rep_num = int(input())
-num2dac(rep_num)
-
+print(3.26 * (a[mid]/255))
 
 GPIO.cleanup
-
-while low != up:
-    mid = (low + up) // 2
-    if a[mid] > 0 : 
-        
-if low == up:
-    print(3.26 * (value/255))
